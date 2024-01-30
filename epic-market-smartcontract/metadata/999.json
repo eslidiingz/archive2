@@ -1,0 +1,15 @@
+{
+  "name": "Mortus #999",
+  "description": "Mortus #999",
+  "external_url": "epicgathering.io",
+  "attributes": [
+    {
+      "trait_type": "rarity",
+      "value": "3"
+    },
+    {
+      "trait_type": "varient",
+      "value": "Angkorian"
+    }
+  ]
+}

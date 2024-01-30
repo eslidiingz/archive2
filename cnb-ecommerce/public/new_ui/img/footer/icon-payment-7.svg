@@ -1,0 +1,26 @@
+<svg id="Bitcoin_large" xmlns="http://www.w3.org/2000/svg" width="154" height="108" viewBox="0 0 154 108">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f7931a;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_1607" data-name="Rectangle 1607" class="cls-1" width="154" height="108"/>
+  <rect id="Rectangle_1665" data-name="Rectangle 1665" class="cls-1" width="108" height="77" transform="translate(116) rotate(90)"/>
+  <rect id="Rectangle_1676" data-name="Rectangle 1676" class="cls-1" width="108" height="85" transform="translate(131 97) rotate(180)"/>
+  <g id="Group_2670" data-name="Group 2670" transform="translate(48.035 24.86)">
+    <g id="Group_2669" data-name="Group 2669" transform="translate(0 0)">
+      <path id="Path_3564" data-name="Path 3564" class="cls-2" d="M585.072,466.819a29.209,29.209,0,1,1-29.212-29.214A29.211,29.211,0,0,1,585.072,466.819Z" transform="translate(-526.655 -437.605)"/>
+      <path id="Path_3565" data-name="Path 3565" class="cls-3" d="M580.83,468.52c-.376-3.913-3.754-5.225-8.019-5.6v-5.428h-3.3v5.285c-.868,0-1.756.018-2.638.035v-5.32h-3.3v5.426c-.716.014-1.418.028-2.1.028v-.017l-4.557,0v3.529s2.44-.047,2.4,0a1.706,1.706,0,0,1,1.9,1.448v6.184a2.708,2.708,0,0,1,.35.023h-.349v8.662a1.167,1.167,0,0,1-1.241,1.095c.042.037-2.4,0-2.4,0l-.657,3.946h4.3c.8,0,1.587.014,2.36.019l0,5.49h3.3v-5.432c.906.019,1.783.026,2.639.026v5.406h3.3v-5.48c5.554-.319,9.442-1.718,9.925-6.934.389-4.2-1.586-6.075-4.739-6.832A5.112,5.112,0,0,0,580.83,468.52Zm-4.623,11.738c0,4.1-7.022,3.636-9.262,3.638v-7.273C569.186,476.623,576.208,475.978,576.207,480.258ZM574.671,470c0,3.732-5.859,3.3-7.724,3.3v-6.6C568.811,466.7,574.67,466.1,574.671,470Z" transform="translate(-540.128 -446.463)"/>
+    </g>
+  </g>
+</svg>

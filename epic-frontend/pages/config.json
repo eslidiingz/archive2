@@ -1,0 +1,8 @@
+{
+  "infuraKey": "06c436264bbd41b7854f089b9cb70538",
+  "basePrice": 500,
+  "baseToken": "MTT",
+  "TokenAddress": "0x6FFE12652bc18Aa452CCF920895d9E544E24B608",
+  "NFTAddress": "0x254b5B8Fd51BB52927Ac8a1d1F01D3E329886a74",
+  "blockExplorer": "https://rinkeby.etherscan.io"
+}

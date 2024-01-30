@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="267" height="56" viewBox="0 0 267 56">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#c75ba1}.cls-1{font-size:37px;font-family:Kanit-Regular,Kanit}
+        </style>
+    </defs>
+    <g id="Group_40" data-name="Group 40" transform="translate(-74 -176)">
+        <text id="_1" class="cls-1" data-name="1" transform="translate(74 176)">
+            <tspan x="12.598" y="41">1</tspan>
+        </text>
+        <text id="_3" class="cls-1" data-name="3" transform="translate(119 176)">
+            <tspan x="8.899" y="41">3</tspan>
+        </text>
+        <text id="_5" class="cls-1" data-name="5" transform="translate(166 176)">
+            <tspan x="8.972" y="41">5</tspan>
+        </text>
+        <text id="_7" class="cls-1" data-name="7" transform="translate(210 176)">
+            <tspan x="9.287" y="41">7</tspan>
+        </text>
+        <text id="_9" class="cls-1" data-name="9" transform="translate(257 176)">
+            <tspan x="7.899" y="41">9</tspan>
+        </text>
+        <text id="_0" class="cls-1" data-name="0" transform="translate(303 176)">
+            <tspan x="6.457" y="41">0</tspan>
+        </text>
+        <g id="กรอกเลข_OTP" data-name="กรอกเลข OTP" transform="translate(75 228.647)">
+            <rect id="Rectangle" width="2" height="37" class="cls-2" rx="1" transform="rotate(90 18.323 18.677)"/>
+            <rect id="Rectangle-2" width="2" height="37" class="cls-2" data-name="Rectangle" rx="1" transform="rotate(90 41.324 41.677)"/>
+            <rect id="Rectangle-3" width="2" height="37" class="cls-2" data-name="Rectangle" rx="1" transform="rotate(90 64.323 64.677)"/>
+            <rect id="Rectangle-4" width="2" height="37" class="cls-2" data-name="Rectangle" rx="1" transform="rotate(90 86.823 87.177)"/>
+            <rect id="Rectangle-5" width="2" height="37" class="cls-2" data-name="Rectangle" rx="1" transform="matrix(0 1 -1 0 220 .353)"/>
+            <rect id="Rectangle-6" width="2" height="37" class="cls-2" data-name="Rectangle" rx="1" transform="matrix(0 1 -1 0 266 .353)"/>
+        </g>
+    </g>
+</svg>

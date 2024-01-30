@@ -1,0 +1,13 @@
+{
+  "openProcess": true,
+  "basePrice": 500,
+  "baseToken": "EPIC",
+  "TokenAddress": "0xeAC1abBF048FBb739b149daFcb9756766Ae1Ea5a",
+  "ItemAddress": "0x989E3729734FCeeeEBA63eaAd758c4D0Cf74a8d7",
+  "AvatarAddress": "0x03089cA8994B9F3DCD368A017fB78BE9a81C5724",
+  "MarketPlaceAddress": "0xfa3F635DbFFf807e73BFC9617fbeC51Ca69B4529",
+  "MarketAuctionAddress": "0x7aC17Cc6c84C77DE900BAA93C6221bADa2CA660a",
+  "MarketSwapAddress": "0x4144a61B5C614979B059a6f9757c7c6e550C8C2D",
+  "blockExplorer": "https://testnet.bscscan.com",
+  "shuffleURI": "http://165.22.62.142:18089/shuffle"
+}

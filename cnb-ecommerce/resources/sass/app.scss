@@ -1,0 +1,413 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+// Variables
+@import "variables";
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+// @import "style";
+@import "home";
+@import "nav";
+@import "responsive";
+@import "productslider";
+@import "sales-list";
+@import "product-detail";
+@import "shop_sidebar";
+@import "profile";
+@import "contest";
+@import "address";
+@import "admin_payment";
+@import "admin_sidebar";
+@import "wishlist";
+@font-face {
+    font-family: DB Heavent-ul;
+    src: url("/fonts/DB Heavent/DBHeaventUlLiv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-ul-italic;
+    src: url("/fonts/DB Heavent/DBHeaventUlLiItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-thin;
+    // src: url("/fonts/DB Heavent/DBHeaventThinv3.2.ttf");
+    src: url("/fonts/Kanit_font/Kanit-Thin.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-thin-italic;
+    src: url("/fonts/DB Heavent/DBHeaventThinItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-medium;
+    // src: url("/fonts/DB Heavent/DBHeaventMedv3.2.ttf");
+    src: url("/fonts/Kanit_font/Kanit-Medium.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-medium-italic;
+    src: url("/fonts/DB Heavent/DBHeaventMedItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-Light;
+    // src: url("/fonts/DB Heavent/DBHeaventLiv3.2.ttf");
+    src: url("/fonts/Kanit_font/Kanit-Light.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-Light-italic;
+    src: url("/fonts/DB Heavent/DBHeaventLiItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-italic;
+    src: url("/fonts/DB Heavent/DBHeaventItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-bold;
+    src: url("/fonts/DB Heavent/DBHeaventBlkv3.2.ttf");
+}
+
+@font-face {
+    font-family: Kanit-SemiBold;
+    src: url("/fonts/Kanit_font/Kanit-SemiBold.ttf");
+    // src: url("/fonts/DB Heavent/DBHeaventBlkv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-blk-italic;
+    src: url("/fonts/DB Heavent/DBHeaventBlkItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-bold;
+    src: url("/fonts/DB Heavent/DBHeaventBdv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-bold-italic;
+    src: url("/fonts/DB Heavent/DBHeaventBdItv3.2.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-regular;
+    // src: url("/fonts/DB Heavent/DBHeaventv3.2.ttf");
+    src: url("/fonts/Kanit_font/Kanit-Regular.ttf");
+}
+
+@font-face {
+    font-family: DB Heavent-regular-italic;
+    src: url("/fonts/DB Heavent/DBHeaventItv3.2.ttf");
+}
+
+.container {
+    max-width: 1440px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+body {
+    margin: 0;
+    background-color: #efefef;
+    padding-top: 80px !important;
+    position: relative;
+}
+
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.bold {
+    font-family: DB Heavent-bold, Helvetica, sans-serif;
+}
+
+.regular {
+    font-family: DB Heavent-regular, Helvetica, sans-serif;
+}
+
+.medium {
+    font-family: DB Heavent-medium, Helvetica, sans-serif;
+}
+
+.thin {
+    font-family: DB Heavent-thin, Helvetica, sans-serif;
+}
+
+.light {
+    font-family: DB Heavent-Light, Helvetica, sans-serif;
+}
+
+.semibold {
+    font-family: Kanit-SemiBold, Helvetica, sans-serif;
+}
+
+.nav-home,
+select {
+    font-family: DB Heavent-medium, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 1.4px 1.4px 0;
+    display: inline-block;
+    padding: 3.5px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
+}
+
+.rounded {
+    border-radius: 8px !important;
+}
+
+.btn-primary {
+    background-color: #f8eaf3;
+    color: $pink;
+    border: none !important;
+}
+
+.btn-grey {
+    background-color: $grey_btn;
+    border: none !important;
+    color: gray;
+}
+
+.btn.btn-success {
+    background-color: $pink;
+    border: none !important;
+}
+
+.btn-success:hover {
+    background-color: $pink;
+    opacity: 0.5;
+}
+
+.btn-outline-primary {
+    border-color: $pink;
+    color: $pink;
+    border-width: 1px;
+}
+
+.btn.btn-primary:hover,
+.btn-outline-primary:hover {
+    background-color: $pink !important;
+    border: $pink;
+    border-width: 1px !important;
+    border-color: $pink !important;
+}
+
+.btn.btn-primary:active {
+    background-color: $pink;
+}
+
+.btn-secondary {
+    color: #ffffff;
+    background-color: $purple;
+    border: $purple !important;
+}
+
+.btn.btn-v:hover {
+    background-color: $pink;
+}
+
+.btn.btn-secondary:active {
+    background-color: $pink;
+}
+
+.breadcrumb {
+    background-color: rgba($color: #000000, $alpha: 0);
+}
+
+.crop-text-2 {
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    padding-top: 14px;
+    height: 55px
+}
+
+.img-shop-profile {
+    object-fit: cover;
+    max-width: 258px;
+    min-width: 150;
+    max-height: 167px;
+    margin: auto auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.btn-status {
+    background-color: #f8eaf3;
+    border-color: #fff;
+    border-width: 1px;
+    height: 50px;
+    width: 50%;
+    font-family: DB Heavent-medium;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    border-radius: 8px;
+    cursor: none;
+}
+
+.btn-canceled {
+    background: transparent;
+    border-color: grey;
+    border-width: 1px;
+    color: grey;
+}
+
+.btn-canceled:hover,
+.btn-canceled:focus,
+.btn-canceled.focus {
+    color: white;
+    background: grey;
+    border-color: grey;
+    border-width: 1px;
+}
+
+.font-header {
+    font-family: DB Heavent-medium;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+}
+
+.font-body {
+    font-family: DB Heavent-medium;
+    font-size: 17px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+}
+
+.font-body2 {
+    font-family: DB Heavent-medium;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+}
+
+.font-body3 {
+    font-family: DB Heavent-medium;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+}
+
+.crop-text-3 {
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.badge {
+    border-radius: 50% !important;
+    position: absolute !important;
+    margin-left: -5px;
+}
+
+.form-control-file,
+.form-control-range {
+    display: block;
+    width: 100%;
+}
+
+.custom-file-upload {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    background-color: #ddd;
+    width: 30px;
+    height: 30px;
+    padding: 0px 6px;
+    bottom: 0vmin;
+    right: 1vmin;
+    border: 1px solid #fff;
+}
+
+.custom-file-upload img {
+    width: 2vmin;
+    margin-top: -3px;
+    width: 100%;
+}
+
+.t10-img-thumbnail {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 0px solid #fff;
+    object-fit: cover;
+}
+
+.t10-fix-position {
+    width: 34vmin;
+    margin: auto;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.product-img-thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    // margin-top: -100px;
+    border-radius: 5px;
+}
+
+.product-card {
+    height: 350px;
+    padding-top: 100%;
+    // max-height: 250px;
+    // margin-top: 100px !important;
+    padding: 12px;
+}
+
+.checked {
+    color: #f6c100 !important;
+}
+
+.fa-star {
+    color: rgb(116, 116, 116);
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}

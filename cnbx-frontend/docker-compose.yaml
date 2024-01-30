@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  frontend:
+    image: node:16-alpine3.12
+    restart: always
+    build: .
+    # ports:
+    #   - "3000:3000"
+    # environment:
+    #   PORT: 3000
+    labels:
+      caddy: nft.thailandpost.com, nft.multiverseexpert.io
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+    networks:
+      - caddy
+
+networks:
+  caddy:
+    external: true

@@ -1,0 +1,18 @@
+<svg id="Google-_" data-name="Google-+" xmlns="http://www.w3.org/2000/svg" width="59.053" height="59.053" viewBox="0 0 59.053 59.053">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dc4e41;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_120" data-name="Group 120">
+    <path id="back" class="cls-1" d="M0,29.526A29.526,29.526,0,1,1,29.526,59.053,29.526,29.526,0,0,1,0,29.526Z"/>
+    <path id="Combined-Shape-path" class="cls-2" d="M11,9.455H21.384a10.175,10.175,0,0,1,.173,1.828c0,6.3-4.211,10.778-10.559,10.778A11.03,11.03,0,0,1,11,0a10.527,10.527,0,0,1,7.369,2.884L15.382,5.767A6.18,6.18,0,0,0,11,4.065,6.9,6.9,0,0,0,4.179,11.03,6.9,6.9,0,0,0,11,18a5.944,5.944,0,0,0,6.238-4.759H11Z" transform="translate(11.403 18.988)"/>
+    <path id="Combined-Shape-path-2" data-name="Combined-Shape-path" class="cls-2" d="M9.427,3.152V6.3H6.285V9.455H3.142V6.3H0V3.152H3.142V0H6.285V3.152Z" transform="translate(36.542 25.291)"/>
+  </g>
+</svg>

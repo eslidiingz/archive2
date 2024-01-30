@@ -1,0 +1,85 @@
+.content-paper-token {
+  border: 30px solid pink;
+  height: 40vh;
+  border-image-source: url("../../public/border-bg.png");
+  border-image-slice: 35;
+  border-image-width: 35px;
+  border-image-outset: 18px;
+  border-image-repeat: round;
+  background-image: url("../../public/bg.jpg");
+  background-size: 450px 450px;
+  background-repeat: repeat;
+  min-height: 584px;
+  height: unset;
+}
+
+.modal-body-md,
+.bg-modal {
+  background-image: url("../../public/modal-bg.webp");
+  background-size: 100% 100%;
+  background-position: bottom;
+  position: relative;
+  max-height: 680px;
+  min-height: 590px;
+  background-color: #fefefe00 !important ;
+  padding: 70px;
+}
+.modal-content {
+  background-color: #fefefe00 !important ;
+}
+
+/* @media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  td:nth-of-type(1):before {
+    content: "Total Locked (DEEP)";
+  }
+  td:nth-of-type(2):before {
+    content: "Round";
+  }
+  td:nth-of-type(3):before {
+    content: "Actions";
+  }
+  .modal-body-md,.bg-modal {
+      padding: 45px 20px;
+  }
+} */

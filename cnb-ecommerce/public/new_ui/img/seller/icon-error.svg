@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.195" height="23" viewBox="0 0 15.195 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fad577;
+      }
+
+      .cls-2 {
+        fill: #0f0f0f;
+        font-size: 19px;
+        font-family: DBHeavent-Med, DB Heavent;
+      }
+    </style>
+  </defs>
+  <g id="Group_5350" data-name="Group 5350" transform="translate(-325 -191)">
+    <g id="Icon_Select_Blue" data-name="Icon/Select/Blue" transform="translate(325 195)">
+      <g id="Group_86" data-name="Group 86">
+        <g id="Group_85" data-name="Group 85">
+          <g id="Group_84" data-name="Group 84">
+            <path id="Path_113" data-name="Path 113" class="cls-1" d="M6.653,14.25a7.6,7.6,0,1,1,7.6-7.6A7.606,7.606,0,0,1,6.653,14.25Z" transform="translate(0.945 0.945)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="_" data-name="!" class="cls-2" transform="translate(330 207)"><tspan x="0" y="0">!</tspan></text>
+  </g>
+</svg>

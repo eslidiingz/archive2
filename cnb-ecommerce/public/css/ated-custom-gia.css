@@ -1,0 +1,305 @@
+.btn-outline-c45e9f:hover {
+    border: 1px solid #333;
+    background-color: #ffffff00;
+    color: #333;
+}
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #346751;
+    border-color: #346751;
+  }
+  .custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #346751;
+    background-color: #346751;
+  }
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #346751;
+    border-color: #346751;
+}
+.btn-cat-pay{
+    background-color: #ffffff;
+    color: #346751;
+    border-color: #346751;
+    border-radius: 5rem;
+}
+
+.table .thead-blue th {
+    color: #fff;
+    background-color: #346751;
+    border-color: #346751;
+}
+.color-yallow{
+    color: #ffa400;
+}
+.color-price{
+    color: #EE1C25;
+}
+.color-green{
+    color: #28a745;
+}
+.color-sky{
+    color: #346751;
+}
+.color-grey{
+    color: #000000;
+}
+.color-grey:hover{
+    color: #346751;
+}
+.nav-manage.active {
+    color: white !important;
+    background-color: #346751 !important;
+}
+.btn-select{
+    color: #fff  !important;
+    background-color: #346751  !important;
+    border-radius: 1rem  !important;
+    border: none  !important;
+}
+.btn-select:hover{
+    color: #fff;
+    background-color: #346751;
+    border-radius: 1rem;
+    border: none;
+}
+.btn-verify{
+    background: #EE1C25 !important;
+    color: white !important;
+    height: 100% !important;
+    font-size: 14px !important; 
+    border-radius: 1rem !important;
+    border: none !important;
+}
+.btn-verify:hover{
+    background: #EE1C25;
+    color: white;
+    height: 100%;
+    font-size: 14px;
+    border-radius: 1rem;
+    border: none;
+}
+
+.color-grey-sub{
+    color: #717171;
+    text-indent: 30px;
+}
+.color-grey-sub:hover{
+    color: #346751;
+    text-indent: 30px;
+}
+
+.p4 {
+    padding: 10px 25px 10px 25px;
+}
+.strong-text {
+    margin-bottom: 10px;
+}
+
+.background-w{
+    background: #fff;
+}
+
+.btn-main-set {
+    background-color: #346751 !important;
+    color: #fff !important;
+}
+.btn-main-set:hover {
+    color: #346751 !important;
+    border-radius: 6px;
+    background-color: #fff !important;
+    border: 1px solid #346751;
+}
+.btn-c75ba1:hover {
+    color: #346751 !important;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #346751;
+}
+.card-header-helper {
+    background-color: #fff !important;
+}
+.icon-pencil{
+    color: white;
+    background-color: #346751;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.o-btn-purple {
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #346751;
+    padding: 10px;
+    color: #fff;
+    border: 0px;
+    width: 100px;
+}
+.btn-save{
+    color: white;
+    background-color: #346751;
+    border-color: #346751;
+    padding: 5px 30px;
+
+}
+.btn-save:hover{
+    color: white;
+    background-color: #346751;
+    border-color: #346751;
+    padding: 5px 30px;
+}
+
+.banner_product_n {
+    /* background-image: url('../new_ui/img/banner_bg/banner_product_news.png'); */
+    background-color: #acacac;
+    width: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn-see-more{
+    width: 100%;
+    background-color: #346751;
+    color: #fff;
+    box-shadow: 0 .125rem 0.50rem rgba(0,0,0,0.100)!important;
+}
+.btn-see-more:hover{
+    width: 100%;
+    background-color: #346751;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 .125rem 0.50rem rgba(0,0,0,0.100)!important;
+}
+.background-blue{
+    background-color: #346751;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff !important;
+    background-color: #346751 !important;
+    border-color: #346751 !important;
+    border-radius: 10rem !important;
+    font-size: 10px !important;
+    margin: 3px!important;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d !important;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff !important;
+    border-color: #dee2e6 !important;
+    border-radius: 10rem!important; 
+    font-size: 10px !important;
+    margin: 3px !important;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25!important;
+    color: #346751!important;
+    border-radius: 10rem !important;
+    font-size: 10px!important;
+    margin: 3px;
+    background-color: #fff !important;
+    border: 1px solid #dee2e6 !important;
+}
+.page-item:last-child .page-link{
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+    border-radius: 10rem;
+    font-size: 10px;
+    margin: 3px;
+}
+.page-item:first-child .page-link{
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+    border-radius: 10rem;
+    font-size: 10px;
+    margin: 3px;
+}
+.img-fig-about {
+    width: 100%;
+}
+input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='checkbox'] {
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeSpeed;
+width: 18px;
+height: 18px;
+margin: 0;
+margin-right: 1px;
+display: block;
+float: left;
+position: relative;
+cursor: pointer;
+}
+input[type='checkbox']:after {
+content: "";
+vertical-align: middle;
+text-align: center;
+line-height: 18px;
+position: absolute;
+cursor: pointer;
+height: 18px;
+width: 18px;
+left: 0;
+top: 0;
+font-size: 15px;
+-webkit-box-shadow: inset 0 1px 0px #34675100, 0 1px 5px #34675161;
+-moz-box-shadow: inset 0 1px 0px #34675100, 0 1px 5px #34675161;
+box-shadow: inset 0 1px 0px #34675100, 0 1px 5px #34675161;
+background: #34675130;
+}
+
+input[type='checkbox']:hover:after, input[type='checkbox']:checked:hover:after {
+background: #346751;
+content: '\2714';
+color: #fff;
+border-radius: 2px;
+}
+
+input[type='checkbox']:checked:after {
+background: #346751;
+content: '\2714';
+color: #fff;
+border-radius: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .img-fig-about {
+        max-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .w-40-set{
+        width: 40% !important;
+    }
+    .w-60-set{
+        width: 60% !important;
+    }
+}
+
+
+
+

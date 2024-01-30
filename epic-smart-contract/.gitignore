@@ -1,0 +1,8 @@
+.env
+yarn.lock
+
+node_modules/
+artifacts/
+metadata/
+cache/
+assets/

@@ -1,0 +1,23 @@
+<svg id="Icon_Select_Blue" data-name="Icon/Select/Blue" xmlns="http://www.w3.org/2000/svg" width="15.195" height="15.195" viewBox="0 0 15.195 15.195">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #23c197;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_86" data-name="Group 86">
+    <g id="Group_85" data-name="Group 85">
+      <g id="Group_84" data-name="Group 84">
+        <path id="Path_113" data-name="Path 113" class="cls-1" d="M6.653,14.25a7.6,7.6,0,1,1,7.6-7.6A7.606,7.606,0,0,1,6.653,14.25Z" transform="translate(0.945 0.945)"/>
+      </g>
+    </g>
+  </g>
+  <g id="Group_87" data-name="Group 87" transform="translate(3.81 3.615)">
+    <path id="Path_114" data-name="Path 114" class="cls-2" d="M89.726,91.493a.891.891,0,0,1-.63-.261l-1.49-1.49a.891.891,0,1,1,1.26-1.26l.764.764,3.854-5.138a.891.891,0,1,1,1.426,1.069l-4.47,5.96a.891.891,0,0,1-.65.354Z" transform="translate(-87.345 -83.751)"/>
+  </g>
+</svg>

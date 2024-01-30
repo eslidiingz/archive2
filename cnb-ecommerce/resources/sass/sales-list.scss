@@ -1,0 +1,23 @@
+.nav-tabs3 .nav-link3.active {
+    color: $white;
+    background-color: $pink !important;
+    border: none !important;
+}
+
+.nav-tabs3 {
+    border-bottom: 4px solid $pink !important;
+    height: 39px;
+}
+
+.nav-tabs3 .nav-link3 {
+    height: 35px;
+    // width: 130px;
+    border: solid;
+    background-color: #707070;
+    border-width: 0.5px;
+    border-bottom: none;
+    background-color: #efefef;
+    margin-right: 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c75ba1;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #d9d9d9;
+      }
+
+      .cls-4 {
+        fill: #eceff1;
+      }
+
+      .cls-5 {
+        fill: #f4f4f4;
+      }
+    </style>
+  </defs>
+  <g id="Group_5110" data-name="Group 5110" transform="translate(0.194 -0.024)">
+    <circle id="Ellipse_127" data-name="Ellipse 127" class="cls-1" cx="16.5" cy="16.5" r="16.5" transform="translate(-0.194 0.024)"/>
+    <g id="delivery-box" transform="translate(8.022 8.183)">
+      <path id="Path_683" data-name="Path 683" class="cls-2" d="M16,96H31.924v12.208a1.062,1.062,0,0,1-1.062,1.062h-13.8A1.062,1.062,0,0,1,16,108.208V96Z" transform="translate(-16 -92.815)"/>
+      <path id="Path_684" data-name="Path 684" class="cls-3" d="M31.924,3.185H16L18.356.256A1.062,1.062,0,0,1,19.047,0h9.83a1.062,1.062,0,0,1,.691.256Z" transform="translate(-16)"/>
+      <path id="Path_685" data-name="Path 685" class="cls-4" d="M211.185,3.185H208L208.531,0h2.123Z" transform="translate(-201.63)"/>
+      <rect id="Rectangle_513" data-name="Rectangle 513" class="cls-5" width="3.234" height="3.192" transform="translate(6.342 2.879)"/>
+      <path id="Path_691" data-name="Path 691" class="cls-3" d="M67.716,353.062H64.531a.531.531,0,1,1,0-1.061h3.185a.531.531,0,1,1,0,1.061Z" transform="translate(-62.408 -340.323)"/>
+      <path id="Path_692" data-name="Path 692" class="cls-3" d="M66.123,417.062H64.531a.531.531,0,0,1,0-1.062h1.592a.531.531,0,0,1,0,1.062Z" transform="translate(-62.408 -402.199)"/>
+    </g>
+  </g>
+</svg>

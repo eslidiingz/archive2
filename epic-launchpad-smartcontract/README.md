@@ -1,0 +1,5 @@
+# DEEPLOGO Smartcontract
+
+**[bsc-testnet]** <br>
+**DEEPToken:** 0xf26D2FA5905C4Ce374b892F19298B93911983B61 <br>
+**DEEPLaunchpad:** 0x18Aa2E4FB98De1Ff99BF36863F41CE117709FC24<br>

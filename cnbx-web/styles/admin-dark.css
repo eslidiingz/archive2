@@ -1,0 +1,51 @@
+
+.admin-container.dark {
+	color: #fff; background-color: #333333;
+}
+
+.admin-container.dark > .admin-sidemenu {
+	color: #fff; background-color: #212121;
+}
+
+.admin-container.dark .table {
+	color: #fff;
+}
+.admin-container.dark .table-striped > tbody > tr:nth-of-type(odd) > * {
+	color: #fff;
+}
+.admin-container.dark .table-striped > tbody > tr:nth-of-type(odd):hover > * {
+	color: #fff;
+}
+
+.admin-container > .admin-sidemenu::-webkit-scrollbar {
+	width: 4px;
+}
+.admin-container > .admin-sidemenu::-webkit-scrollbar-track {
+	background: #eaeaea;
+}
+.admin-container > .admin-sidemenu::-webkit-scrollbar-thumb {
+	background: #cccccc;
+}
+.admin-container > .admin-sidemenu::-webkit-scrollbar-thumb:hover {
+	background: #bbbbbb;
+}
+
+.admin-container.dark > .admin-sidemenu::-webkit-scrollbar-track {
+	background: #212121;
+}
+.admin-container.dark > .admin-sidemenu::-webkit-scrollbar-thumb {
+	background: #444444;
+}
+.admin-container.dark > .admin-sidemenu::-webkit-scrollbar-thumb:hover {
+	background: #555555;
+}
+
+/* .admin-container.dark > .admin-sidemenu::-webkit-scrollbar-track {
+	background: #212121;
+}
+.admin-container.dark > .admin-sidemenu::-webkit-scrollbar-thumb {
+	background: #4ca7fb;
+}
+.admin-container.dark > .admin-sidemenu::-webkit-scrollbar-thumb:hover {
+	background: #0082fa;
+} */

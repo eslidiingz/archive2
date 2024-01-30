@@ -1,0 +1,15 @@
+<svg id="Group_121" data-name="Group 121" xmlns="http://www.w3.org/2000/svg" width="59.053" height="59.053" viewBox="0 0 59.053 59.053">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b5998;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="back" class="cls-1" d="M0,29.526A29.526,29.526,0,1,1,29.526,59.053,29.526,29.526,0,0,1,0,29.526Z" transform="translate(0)"/>
+  <path id="Shape" class="cls-2" d="M9.967,32.124V16.06H14.4l.588-5.536H9.967l.008-2.771c0-1.444.137-2.217,2.211-2.217h2.772V0H10.523c-5.327,0-7.2,2.685-7.2,7.2v3.324H0v5.536H3.321V32.124Z" transform="translate(22.637 14.763)"/>
+</svg>

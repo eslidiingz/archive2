@@ -1,0 +1,104 @@
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: #f1f1f1;
+    color: #666;
+}
+
+.MultiCarousel .leftLst,
+.MultiCarousel .rightLst {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+    left: 0;
+}
+
+.MultiCarousel .rightLst {
+    right: 0;
+}
+
+.MultiCarousel .leftLst.over,
+.MultiCarousel .rightLst.over {
+    pointer-events: none;
+    background: #ccc;
+}
+
+// .flash-sale {
+//     background-color: white;
+//     // height: 30vw;
+//     border-radius: 8px;
+//     clear: both;
+//     position: relative;
+//     top: 20px;
+//     // margin: 0 auto;
+//     padding-top: 20px;
+//     padding: 20px 20px;
+//     margin-left: 3%;
+//     margin-right: 3%;
+// }
+// .slider {
+//     width: 100%;
+//     height: 20vw !important;
+//     position: relative;
+//     margin: auto;
+//     overflow-x: scroll;
+//     overflow-y: hidden;
+// }
+// .slider::-webkit-scrollbar {
+//     display: none;
+// }
+// .slider .slide {
+//     display: flex;
+//     position: absolute;
+//     left: 0;
+//     transition: 0.3s left ease-in-out;
+// }
+// .slider .item {
+//     margin-right: -50px;
+// }
+// .slider .item:last-child {
+//     margin-right: 0;
+// }
+// .ctrl {
+//     text-align: center;
+//     margin-top: 5px;
+// }
+// .ctrl-btn {
+//     padding: 20px 20px;
+//     min-width: 50px;
+//     background: #fff;
+//     border: none;
+//     font-weight: 600;
+//     text-align: center;
+//     cursor: pointer;
+//     outline: none;
+//     position: absolute;
+//     top: 50%;
+//     margin-top: -27.5px;
+// }
+// .ctrl-btn.pro-prev {
+//     left: 0;
+// }
+// .ctrl-btn.pro-next {
+//     right: 0;
+// }

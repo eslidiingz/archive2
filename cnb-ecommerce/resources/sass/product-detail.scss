@@ -1,0 +1,28 @@
+.pagination {
+    justify-content: flex-end;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.page-link {
+    margin: 20px 4px;
+    border-radius: 5px;
+    color: $black;
+    font-size: 1.2rem;
+}
+
+.page-item.active .page-link {
+    background-color: $purple;
+    border: none;
+}
+
+.btn-grey:not(:disabled):not(.disabled):active,
+.btn-grey:not(:disabled):not(.disabled).active,
+.show>.btn-grey.dropdown-toggle {
+    background-color: $purple;
+    color: white;
+}

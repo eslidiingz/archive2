@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  web:
+    image: nginx:alpine
+    restart: always
+    networks:
+      - caddy
+    volumes:
+    - ./out:/usr/share/nginx/html:ro
+    labels:
+      caddy: dexb.multiverse2021.io
+      caddy.reverse_proxy: "{{upstreams 80}}"
+
+networks:
+  caddy:
+    external: true

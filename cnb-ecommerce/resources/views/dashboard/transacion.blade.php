@@ -1,0 +1,637 @@
+@extends('layouts.dashboard')
+@section('content')
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+<style>
+    .box {
+        height: calc(100vh - 200px);
+        ;
+    }
+
+    .top {
+        margin-top: 100px;
+    }
+    .nav-tabs {
+        border-bottom: 5px solid #346751 !important;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .nav-tabs .nav-link {
+        border-bottom: 1px solid #346751 !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .nav-item {
+        font-size: 16px !important;
+        padding-right: 5px !important;
+    }
+
+    .nav-link {
+        color: black !important;
+        background: #efefef;
+    }
+
+    .table.dataTable.no-footer {
+        border: unset;
+    }
+
+    .table.dataTable tbody tr {
+        background-color: #ffffff;
+    }
+</style>
+@php
+// dd($invs);
+@endphp
+
+<div class="container-fluid px-0" style='background:#efefef'>
+    <div class="row">
+        <div class="col-xl-12 col-12 ml-xl-auto">
+            <h5 class="mt-4"><b>ประวัติธุรกรรมการเงิน</b>
+            </h5>
+            <div class=" text-center">
+                <div class="d-lg-block d-md-block d-none" style='font-size:unset'>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active  nav-manage" id="list-1-tab" data-toggle="tab" href="#list-1" role="tab"
+                                aria-controls="list-1" aria-selected="true">ทั้งหมด ({{ count($transacion) }})</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-group d-lg-none d-md-none d-block">
+                    <select class="form-control" id="select-submenu">
+                        <option value="1">ทั้งหมด ({{ count($transacion) }})</option>
+                    </select>
+                </div>
+
+
+                {{-- SEARCH --}}
+                <div class="col-lg-12 col-md-12 col-12 py-4" style="background: #fff;">
+                    <form role="search" action="/dashboard/payment/transacion" method="GET">
+                        {{-- @csrf --}}
+                        <div class="input-group flex-wrap mb-3 mt-3 justify-content-center">
+                            <div
+                                class="d-flex align-items-center col-lg-auto col-md-12 col-12 text-md-left text-left mt-lg-0 mt-md-4 mt-4">
+                                <h6 class="mb-0">รูปแบบธุรกรรม</h6>
+                            </div>
+                            <select class="form-control col-lg-2" id="status" name='status'>
+                                <option id='status_chk' value='0'>ทั้งหมด</option>
+                                <!-- <option id='status_chk' value='wallet'>Wallet</option> -->
+                                <option id='status_chk' value='withdraw'>การถอนสำเร็จ</option>
+                                <option id='status_chk' value='shopteenii'>การซื้อขายสินค้าสำเร็จ</option>
+                            </select>
+                            <div
+                                class="d-flex align-items-center col-lg-auto col-md-12 col-12 text-md-left text-left mt-lg-0 mt-md-4 mt-4">
+                                <h6 class="mb-0">ชื่อ- นามสกุล</h6>
+                            </div>
+                            @if (isset($_REQUEST['u_name']))
+                            <input type="text" name="u_name" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                value="{{ $_REQUEST['u_name'] }}" placeholder="ชื่อผู้ใช้งาน" aria-label="u_name"
+                                aria-describedby="addon-wrapping">
+                            @else
+                            <input type="text" name="u_name" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;" value=""
+                                placeholder="ชื่อ- นามสกุล" aria-label="u_name" aria-describedby="addon-wrapping">
+                            @endif
+                            <div
+                                class="d-flex align-items-center col-lg-auto col-md-12 col-12 text-md-left text-left mt-lg-0 mt-md-4 mt-4">
+                                <h6 class="mb-0">จำนวนเงิน</h6>
+                            </div>
+                            @if (isset($_REQUEST['amount']))
+                            <input type="number" name="amount" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                value="{{ $_REQUEST['amount'] }}" placeholder="จำนวนเงิน" aria-label="amount"
+                                aria-describedby="addon-wrapping">
+                            @else
+                            <input type="number" name="amount" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;" value=""
+                                placeholder="จำนวนเงิน" aria-label="amount" aria-describedby="addon-wrapping">
+                            @endif
+                            <div
+                                class="d-flex align-items-center col-lg-auto col-md-12 col-12 text-md-left text-left mt-lg-0 mt-md-4 mt-4">
+                                <h6 class="mb-0">เลขกำกับคำสั่งซื้อ</h6>
+                            </div>
+                            @if (isset($_REQUEST['inv_ref']))
+                            <input type="text" name="inv_ref" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                value="{{ $_REQUEST['inv_ref'] }}" placeholder="เลขกำกับคำสั่งซื้อ" aria-label="amount"
+                                aria-describedby="addon-wrapping">
+                            @else
+                            <input type="text" name="inv_ref" class="form-control col-lg-2"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;" value=""
+                                placeholder="เลขกำกับคำสั่งซื้อ" aria-label="inv_ref" aria-describedby="addon-wrapping">
+                            @endif
+                            
+                        </div>
+                        <div class="input-group flex-wrap pt-2 justify-content-center">
+                            <input hidden type="search" name="search" class="form-control"
+                                style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                value="search" placeholder="ค้นหาสินค้า" aria-label="search"
+                                aria-describedby="addon-wrapping">
+                            <div
+                                class="col-lg-auto d-flex align-items-center col-md-12 col-12 text-md-left text-left mt-lg-0 mt-md-4 mt-4">
+                                <h6 class="mb-0">วันที่</h6>
+                            </div>
+                            <div class="col-lg-3 col-md-5 col-5">
+                                @if (isset($_REQUEST['date_start']))
+                                <input type="date" name="date_start" value="{{ $_REQUEST['date_start'] }}"
+                                    class="form-control"
+                                    style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                    placeholder="date-start" aria-label="date-start" aria-describedby="addon-wrapping">
+                                @else
+                                <input type="date" name="date_start" class="form-control"
+                                    style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                    placeholder="date-start" aria-label="date-start" aria-describedby="addon-wrapping">
+                                @endif
+                            </div>
+                            <div class="col-1 d-flex align-items-center">
+                                <h6 class="mb-0">ถึงวันที่</h6>
+                            </div>
+                            <div class="col-lg-3 col-md-5 col-5">
+                                @if (isset($_REQUEST['date_end']))
+                                <input type="date" name="date_end" value="{{ $_REQUEST['date_end'] }}"
+                                    class="form-control"
+                                    style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                    placeholder="date-end" aria-label="date-end" aria-describedby="addon-wrapping">
+                                @else
+                                <input type="date" name="date_end" class="form-control"
+                                    style="border: none; border-bottom: 1px solid #ced4da; border-radius: unset;"
+                                    placeholder="date-end" aria-label="date-end" aria-describedby="addon-wrapping">
+                                @endif
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 mb-2">
+                                <input type="submit" value="ค้นหา" name="filter" id="filter" class="form-control btn  btn-main-set">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 mb-2">
+                                <a href="/dashboard/payment/transacion"><input type="button" value="ล้างค่า" class="form-control btn " style="background-color: #ffc107"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="w-100 mb-4 pb-4" style="background: #fff;border-radius: 0 0 15px 15px;">
+                    <div class="col-lg-2 col-md-3 col-12 m-auto py-3">
+                        <a href="/dashboard/transaction/excel?date_start={{ @$_REQUEST['date_start'] }}&date_end={{ @$_REQUEST['date_end'] }}&status={{ @$_REQUEST['status'] }}&shop_name={{ @$_REQUEST['shop_name'] }}&invs={{ @$_REQUEST['invs'] }}&u_name={{ @$_REQUEST['u_name'] }}"
+                            class="btn btn-success form-control"><i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                            Download Excel </a>
+                    </div>
+                </div>
+                {{-- SEARCH --}}
+
+                <div class="w-100">
+                    <div class="tab-content" style="background: #fff;padding-top: 10px;padding-left: 10px;padding-right: 10px;border-radius: 15px;">
+                        {{-- 1taphome --}}
+                        <div class="row justify-content-center tab-pane fade show active " id="list-1" style="padding-left: 10px !important; padding-right: 10px !important;">
+                            <div class="container-fluid table-responsive">
+                                <div class="card" style="border: none;">
+                                    <div class="card-body m-2 p-0 ">
+                                        <table class="table table-striped" id="">
+                                            <thead class="thead-blue">
+                                                <tr>
+                                                    {{-- <th class='no-sort'><input type="checkbox" name="select_all"
+                                                            value="1" id="example-select-all"></th> --}}
+                                                    <th scope="col">อันดับ</th>
+                                                    <th style="width:150px" scope="col">วันเวลาล่าสุด</th>
+                                                    <th style="width:150px" scope="col">ชื่อ- นามสกุล</th>
+                                                    <th scope="col">จำนวนเงิน</th>
+                                                    <th scope="col">เลขกำกับคำสั่งซื้อ</th>
+                                                    <th scope="col">รูปแบบธุรกรรม</th>
+                                                    <th style="width:150px" scope="col">สถานะ</th>
+                                                    {{-- <th scope="col">ดำเนินการ</th> --}}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($transacion as $key=>$invsdata)
+                                                <tr style="text-align: center; align-items: center;">
+                                                    {{-- <td><input type="checkbox" name="id[]" value="{{ $key }}"></td>
+                                                    --}}
+                                                    <td data-label="#">
+                                                        {{ (($transacion->currentPage()-1) * $transacion->perPage())+$key+1 }}
+                                                    </td>
+                                                    @php
+                                                    $invid = "";
+                                                    $total = 0;
+                                                    @endphp
+                                                    <td data-label="วันเวลาล่าสุด">
+                                                        {{ date('d/m/y H:i', strtotime($invsdata->created_at)) }}
+                                                    </td>
+
+                                                    <td data-label="ชื่อ- นามสกุล" style="font-weight:bold;">
+                                                        {{ $invsdata->name }} {{ $invsdata->surname }}
+                                                    </td>
+
+
+                                                    <td data-label="จำนวนเงิน" class="color-price">
+                                                        {{ number_format($invsdata->total + $invsdata->shipping_cost,0) }}
+                                                    </td>
+
+                                                    <td data-label="เลขกำกับคำสั่งซื้อ">{{ $invsdata->inv_ref }}@if(isset($invsdata->inv_no) && $invsdata->inv_no !=null)-{{ $invsdata->inv_no }}@endif</td>
+                                                    @if($invsdata->payment == 'bank')
+                                                    <td data-label="INV_ID">โอน</td>
+                                                    @elseif($invsdata->payment == 'mobilebanking')
+                                                    <td data-label="INV_ID">QR</td>
+                                                    @elseif($invsdata->payment == 'credit')
+                                                    <td data-label="INV_ID">credit</td>
+                                                    @else
+                                                    <td data-label="INV_ID">{{ $invsdata->payment }}</td>
+                                                    @endif
+
+                                                    <td data-label="สถานะ">
+                                                        @if($invsdata->status == '12')
+                                                        <b class="color-yallow">รอการอนุมัติ</b>
+                                                        @elseif($invsdata->status == '13')
+                                                        <b class="color-price">ปฏิเสธการอนุมัติ</b>
+                                                        @elseif($invsdata->status == '2')
+                                                        <b class="color-green">อนุมัติสำเร็จ</b>
+                                                        @elseif($invsdata->status == '3')
+                                                        <b class="color-green">ส่งสินค้าแล้ว</b>
+                                                        @elseif($invsdata->status == '4')
+                                                        <b class="color-green">สินค้าถึงปลายทางแล้ว</b>
+                                                        @elseif($invsdata->status == '5')
+                                                        <b class="color-green">รับสินค้า</b>
+                                                        @elseif($invsdata->status == '43')
+                                                        <b class="color-yallow">รอรับสินค้าหน้างาน</b>
+                                                        @elseif($invsdata->status == '52')
+                                                        <b class="color-yallow">รับสินค้าอัตโนมัติ</b>
+                                                        @elseif($invsdata->status == '53')
+                                                        <b class="color-grey">รับสินค้าหน้างานแล้ว</b>
+                                                        @elseif($invsdata->status == '54')
+                                                        <b class="color-green">ประกาศผลแล้ว</b>
+                                                        @else
+                                                        {{ $invsdata->status }}
+                                                        @endif
+                                                    </td>
+
+                                                    {{-- <td data-label="ดำเนินการ"
+                                                        style='text-decoration: underline;color:#226fff'>
+                                                        <a data-toggle="modal"
+                                                            data-target="#chk_status{{ $invsdata->id }}"> ดูเพิ่มเติม
+                                                    </a>
+                                                    </td> --}}
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="chk_status{{$invsdata->id}}"
+                                                        role="dialog">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    ยืนยันการโอน
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close"><span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="d-flex flex-wrap">
+                                                                        <div class="col-6 px-0 text-left">
+                                                                            <b>ยกเลิกรายการรอชำระ :</b>
+                                                                        </div>
+                                                                        <div class="col-6 px-0 text-right">
+                                                                            @if($invsdata->status == '12')
+                                                                            <b class="color-yallow">รอการอนุมัติ</b>
+                                                                            @elseif($invsdata->status == '13')
+                                                                            <b
+                                                                                class="color-price">ปฏิเสธการอนุมัติ</b>
+                                                                            @elseif($invsdata->status == '2')
+                                                                            <b class="color-green">อนุมัติสำเร็จ</b>
+                                                                            @elseif($invsdata->status == '3')
+                                                                            <b class="color-green">ส่งสินค้าแล้ว</b>
+                                                                            @elseif($invsdata->status == '4')
+                                                                            <b
+                                                                                class="color-green">สินค้าถึงปลายทางแล้ว</b>
+                                                                            @elseif($invsdata->status == '5')
+                                                                            <b class="color-green">รับสินค้า</b>
+                                                                            @elseif($invsdata->status == '43')
+                                                                            <b
+                                                                                class="color-yallow">รอรับสินค้าหน้างาน</b>
+                                                                            @elseif($invsdata->status == '52')
+                                                                            <b
+                                                                                class="color-yallow">รับสินค้าอัตโนมัติ</b>
+                                                                            @elseif($invsdata->status == '53')
+                                                                            <b
+                                                                                class="color-grey">รับสินค้าหน้างานแล้ว</b>
+                                                                            @elseif($invsdata->status == '54')
+                                                                            <b class="color-green">ประกาศผลแล้ว</b>
+                                                                            @else
+                                                                            {{ $invsdata->status }}
+                                                                            @endif
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap pt-4">
+                                                                        <div class="col-6 px-0 text-left">
+                                                                            <b>ชื่อผู้ใช้งาน :</b>
+                                                                        </div>
+                                                                        <div class="col-6 px-0 text-right">
+                                                                            <b> {{ $invsdata->name }}
+                                                                                {{ $invsdata->surname }}</b>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap pt-4">
+                                                                        <div class="col-6 px-0 text-left">
+                                                                            <b>ชื่อร้านค้า : </b>
+                                                                        </div>
+                                                                        <div class="col-6 px-0 text-right">
+                                                                            <b>{{ $invsdata->shop_name }}</b>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap pt-4">
+                                                                        <div class="col-6 px-0 text-left">
+                                                                            <b>จำนวนยอดเงินโอน : </b>
+                                                                        </div>
+                                                                        <div class="col-6 px-0 text-right"
+                                                                            style='color:#c45e9f'>
+                                                                            <b> ฿
+                                                                                {{ number_format($invsdata->total + $invsdata->shipping_cost,0) }}</b>
+                                                                        </div>
+                                                                    </div>
+                                                                    <img class='pt-4'
+                                                                        style=';width: 200px;height: 300px;'
+                                                                        src="{{asset('/img/bank_image/'.$invsdata->transfer_img)}}"
+                                                                        alt="">
+                                                                    <div class="d-flex flex-wrap pt-4">
+                                                                        @if($invsdata->status == '12')
+                                                                        <div class="col-6 text-right">
+                                                                            <a
+                                                                                href="/dashboard/payment/btnapprove/?id={{$invsdata->id}}"><button
+                                                                                    class="form-control"
+                                                                                    style='color:white;background:#23c197'>อนุมัติ</button></a>
+                                                                        </div>
+                                                                        <div class="col-6 text-left"
+                                                                            style='color:#c45e9f'>
+                                                                            <a
+                                                                                href="/dashboard/payment/btndeletetra_img/?id={{$invsdata->id}}"><button
+                                                                                    class="form-control"
+                                                                                    style='color:white;background:#a83c23'>ปฏิเสธ</button></a>
+                                                                        </div>
+                                                                        @else
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End -->
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 d-flex align-items-center flex-wrap py-4" style='background: #fff; border-radius: 0 0 15px 15px;'>
+                                <div class="col-6 text-left">
+                                    ลำดับที่ {{ (($transacion->currentPage()-1) * $transacion->perPage())+1 }} -
+                                    {{ (($transacion->currentPage()-1) * $transacion->perPage())+ count($transacion) }}
+                                    จาก
+                                    {{ $transacion->total() }}
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex justify-content-end col-12">
+                                        @if ($transacion->hasPages())
+                                        <ul class="pagination cursor-pointer">
+                                            {{-- Previous Page Link --}}
+
+                                            @if ($transacion->onFirstPage())
+                                            <li class="disabled align-self-center px-2 bg-pagination-white d-none"><span
+                                                    class="mr-1"><i class="fa fa-angle-double-left text-secondary"
+                                                        aria-hidden="true"></i></span></li>
+                                            <li class="disabled align-self-center px-2 bg-pagination-white d-none"><span
+                                                    class="mr-1"><i class="fa fa-angle-left text-secondary"
+                                                        aria-hidden="true"></i></span></li>
+                                            @else <li class="align-self-center px-2 bg-pagination-white">
+                                                <a href="{{ $transacion->url(1) }}" rel="prev">
+                                                    <i class="fa fa-angle-double-left text-secondary"
+                                                        aria-hidden="true"></i>
+                                                </a>
+                                            <li class="align-self-center px-2 bg-pagination-white">
+                                                <a href="{{ $transacion->previousPageUrl() }}" rel="prev">
+                                                    <i class="fa fa-angle-left text-secondary" aria-hidden="true"></i>
+                                                </a>
+                                            </li> @endif
+
+                                            {{-- show button first page --}}
+                                            @if ( $transacion->currentPage() > 5 )
+                                            <li class="align-self-center px-2 bg-pagination-white">
+                                                <a href="{{ $transacion->url(1) }}"><span>1</span></a>
+                                            </li>
+                                            @endif
+                                            {{-- show button first page --}}
+
+
+                                            {{-- condition stay in first page not show button --}}
+                                            {{-- @if ( $transacion->currentPage() == 1 )
+                                                    <li class="align-self-center mr-1">
+                                                        <a class="d-none page-link" tabindex="-2">1</a>
+                                                    </li>
+                                                    @endif --}}
+
+
+                                            @if ( $transacion->currentPage() > 5 )
+                                            <li class="align-self-center px-2 bg-pagination-white">
+                                                <span>...</span>
+                                            </li>
+                                            @endif
+
+
+
+                                            @foreach(range(1, $transacion->lastPage()) as $i)
+                                            @if($i >= $transacion->currentPage() - 2 && $i <= $transacion->currentPage()
+                                                +
+                                                2)
+
+                                                @if ($i == $transacion->currentPage())
+                                                <li class="active px-2 bg-pagination-42294f"><span>{{ $i }}</span></li>
+                                                @else
+                                                <li class="px-2 bg-pagination-white"><a
+                                                        href="{{ $transacion->url($i) }}">{{ $i }}</a>
+                                                </li>
+                                                @endif
+                                                @endif
+                                                @endforeach
+
+
+                                                {{-- three dots between number near last pages --}}
+                                                @if ( $transacion->currentPage() < $transacion->lastPage() - 4)
+                                                    <li class="align-self-center  px-2 bg-pagination-white">
+                                                        <span>...</span>
+                                                    </li>
+                                                    @endif
+                                                    {{-- three dots between number near last pages --}}
+
+
+                                                    {{-- Show Last Page --}}
+                                                    @if($transacion->hasMorePages() == $transacion->lastPage() &&
+                                                    $transacion->lastPage() > 5)
+                                                    <li class="align-self-center px-2 bg-pagination-white">
+                                                        <a href="{{ $transacion->url($transacion->lastPage()) }}"><span>{{ $transacion->lastPage() }}</span>
+                                                        </a>
+                                                    </li>
+                                                    @endif
+                                                    {{-- Show Last Page --}}
+
+
+
+                                                    @if ($transacion->hasMorePages())
+                                                    <li class="align-self-center px-2 bg-pagination-white">
+                                                        <a href="{{ $transacion->nextPageUrl() }}" rel="next">
+                                                            <i class="fa fa-angle-right text-secondary"
+                                                                aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="align-self-center px-2 bg-pagination-white">
+                                                        <a href="{{ $transacion->url($transacion->lastPage()) }}"
+                                                            rel="next">
+                                                            <i class="fa fa-angle-double-right text-secondary"
+                                                                aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    @else
+                                                    <li
+                                                        class="disabled align-self-center px-2 bg-pagination-white d-none">
+                                                        <span><i class="fa fa-angle-right text-secondary"
+                                                                aria-hidden="true"></i></span></li>
+                                                    <li
+                                                        class="disabled align-self-center px-2 bg-pagination-white d-none">
+                                                        <i class="fa fa-angle-double-right text-secondary"
+                                                            aria-hidden="true"></i></a></li>
+
+                                                    @endif
+                                        </ul>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endsection
+
+
+                @section('script')
+
+                <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+                {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+
+                <script>
+                    $('#select-submenu').on('change',function(){
+                    value = $(this).val();
+                    $('a.nav-link[href="#list-'+value+'"]').click();
+                });
+                </script>
+                <script>
+                    $(document).ready(function () {
+                        // $('tr').find("th.no-sort").removeClass("sorting_asc");
+
+                        $("#status option").each(function (index) {
+                            location.getParams = getParams;
+                            // console.log (location.getParams()["status"]);
+                            if($(this).val() == location.getParams()["status"]){
+                                $(this).attr('selected','true');
+                                console.log($(this).val());
+                            }
+                        });
+
+                        $('#add-note').click(function () {
+                            var note = $('#note_note').val();
+                            console.log(note);
+                            // $.ajaxSetup({
+                            // 		headers: {
+                            // 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            // 		}
+                            // 	});
+                            // $.ajax({
+                            //     type:'POST',
+
+                            //     data:{
+                            //         "note":note
+
+                            //     },
+
+                            //     url: "{{route('addnotedata')}}",
+                            //     success: function(respones){
+                            //         console.log(respones);
+                            //             console.log(note);
+                            //     });
+                            // });
+
+                        });
+                    });
+
+                    $('#example-select-all').on('click', function () {
+                        $('tr').find("th.no-sort").removeClass("sorting_asc");
+                        if (this.checked) {
+                            // Iterate each checkbox
+                            $(':checkbox').each(function () {
+                                this.checked = true;
+                            });
+                        } else {
+                            $(':checkbox').each(function () {
+                                this.checked = false;
+                            });
+                        }
+
+                    });
+
+                    function getParams() {
+                            var result = {};
+                            var tmp = [];
+
+                            location.search
+                                .substr(1)
+                                .split("&")
+                                .forEach(function (item) {
+                                    tmp = item.split("=");
+                                    result[tmp[0]] = decodeURIComponent(tmp[1]);
+                                });
+
+                            return result;
+                        }
+
+                    // 	// document.getElementById("#success-modal").showModal();
+                    // 	// $('#add-modal').modal('hide')
+                    // 	// $('#success-modal').modal('show')
+                    // 	// $(document).click(function(){
+                    // 	// 	window.location.reload(true);
+                    // });
+                    // 	// window.location.reload(true);
+                    // 	// document.getElementById("#divv").disabled = true;
+                    // 	// document.getElementById("#addbankbutton").disabled = true;
+                    // 	}
+                    // });
+
+                    // });
+                    // function myFunction() {
+                    // document.getElementById("demo").innerHTML = "<input>";
+                    // }
+                    // $("#hide").click(function(){
+                    // $("#demo").hide();
+                    // });
+                    // $("#show").click(function(){
+                    //     $("#demo").show();
+                    //     console.log("5555")
+                    // });
+
+                    // $(document).on("click",".showinput",function(){
+
+                    //     $(".inputshow").show("sds");
+                    //     console.log("3333")
+                    // });
+                    // $(document).on("click",".showdd",function(){
+                    //     var x = document.getElementById("myDIV");
+                    //         if (x.style.display === "none") {
+                    //             x.style.display = "block";
+                    //         } else {
+                    //             x.style.display = "none";
+                    //         }
+                    // });
+
+                </script>
+
+                @endsection
